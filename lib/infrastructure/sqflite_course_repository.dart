@@ -38,13 +38,9 @@ class SqfliteCourseRepository implements CourseRepository {
   @override
   Future<List<Course>> getList() async {
     final db = await databaseMigration.db();
-    print('Secondary Future getList 1');
     var result = await db
         .rawQuery("SELECT * FROM courses order by semester ASC, name ASC");
-    print('Secondary Future getList 2');
-    print(result);
     List<Course> courses = assembler.fromList(result);
-    print('Secondary Future getList 3');
     return courses;
   }
 

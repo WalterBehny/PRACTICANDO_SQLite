@@ -39,7 +39,7 @@ class CourseListPageState extends State<CourseListPage> {
       itemBuilder: (BuildContext context, int position) {
         return Card(
           color: Colors.white,
-          elevation: 2.0,
+          elevation: 5.0,
           child: ListTile(
             leading: CircleAvatar(
               backgroundColor: getColor(this.courses[position].semester),
@@ -61,16 +61,12 @@ class CourseListPageState extends State<CourseListPage> {
   }
 
   void getData() {
-    print('Main Thread getData');
     final coursesFuture = courseRepository.getList();
-    print('Main Thread getList ' + coursesFuture.toString());
     coursesFuture.then((courseList) {
-      print('Main Thread getList .then');
       setState(() {
         courses = courseList;
         count = courseList.length;
       });
-      debugPrint("Main Thread - Items: " + count.toString());
     });
   }
 
