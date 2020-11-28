@@ -60,15 +60,15 @@ class HomePageState extends State<HomePage> {
         items: <BottomNavigationBarItem>[
           BottomNavigationBarItem(
             icon: Icon(FontAwesomeIcons.graduationCap),
-            title: Text('Cursos'),
+            label: 'Cursos',
           ),
           BottomNavigationBarItem(
             icon: Icon(FontAwesomeIcons.userTie),
-            title: Text('Docentes'),
+            label: 'Docentes',
           ),
           BottomNavigationBarItem(
             icon: Icon(FontAwesomeIcons.userGraduate),
-            title: Text('Estudiantes'),
+            label: 'Estudiantes',
           ),
         ],
         onTap: (index) {
